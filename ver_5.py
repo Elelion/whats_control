@@ -127,6 +127,8 @@ class WhatsminerMonitorCollectData:
 
 
 # it's ok !!!
+# todo: доработать что бы данный класс выводил инфо при
+#  нахождении ошибки в WhatsminerMonitorControl
 class WhatsminerMonitorPrintData:
     def __init__(self, asics_detail):
         self.asics_detail = asics_detail
@@ -346,8 +348,8 @@ monitor = WhatsminerMonitorCollectData(asics_list)
 monitor.monitor()
 ASICS_DETAIL = monitor.get_asics_detail()
 
-# print_asisc_detail = WhatsminerMonitorPrintData(ASICS_DETAIL)
-# print_asisc_detail.print_detail()
+print_asisc_detail = WhatsminerMonitorPrintData(ASICS_DETAIL)
+print_asisc_detail.print_detail()
 
-control = WhatsminerMonitorControl(ASICS_DETAIL)
-control.control()
+# control = WhatsminerMonitorControl(ASICS_DETAIL)
+# control.control()
