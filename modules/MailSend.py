@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 
 
 class MailSend:
-    def __init__(self, mail_body, file_path="settings.conf"):
+    def __init__(self, mail_body, file_path="../settings.conf"):
         self.mail_sender_login = ''
         self.mail_sender_password = ''
         self.mail_receiver_address = ''
@@ -18,6 +18,8 @@ class MailSend:
         self.file_path = os.path.join(os.path.dirname(__file__), file_path)
 
         print("MailSend - Загружаем конфиг из:", self.file_path)
+
+        # self() - вызывает при инициализации __call()__
         self()
 
     # загружаем данные из конфига в словарь settings
@@ -32,7 +34,7 @@ class MailSend:
                     value = value.strip()  # Удаляем лишние пробелы в значении
                     self.settings[key] = value  # Добавляем ключ и значение в словарь settings
 
-            print("Данные успешно загружены из файла")
+            print('MailSend - Данные успешно загружены из файла')
 
     # парсим данные по переменным из словаря settings
     def __apply_settings(self):
@@ -41,7 +43,7 @@ class MailSend:
         self.mail_receiver_address = self.settings.get('mail_receiver_address')
         self.mail_subject = self.settings.get('mail_subject')
         self.settings_loaded = True
-        print("Данные успешно применены")
+        print('MailSend - Данные успешно применены')
 
     # отправляем письмо
     def __send_email(self, sender_email, sender_password, receiver_email, subject, body):
@@ -67,9 +69,9 @@ class MailSend:
 
             # Закрытие соединения с сервером
             server.quit()
-            print("Письмо успешно отправлено!")
+            print('Письмо успешно отправлено!')
         except Exception as e:
-            print("Ошибка при отправке письма:", e)
+            print('Ошибка при отправке письма:', e)
 
     # делаем класс ф-цией, так же делаем проверку, если данные уже загружены
     # мы их НЕ загружаем повторно
