@@ -63,11 +63,30 @@
 ИЗ программы
 `Пример: test@gmail.com`
 <br>
-<br>
 
 + <b>mail_subject</b> - тема письма, можно не менять...
 
 + установить на локальной машине через командную строку: `pip install whatsminer`
+
+
+---
+
+## Описание модулей
+- [MailSend.py](https://github.com/Elelion/whats_control/blob/main/modules/MailSend.py)
+модуль для отправки писем операторам
+
+- [NetworkScanner.py](https://github.com/Elelion/whats_control/blob/main/modules/NetworkScanner.py)
+модуль для асинхронного сканирования заданных подсетей
+
+- [WhatsminerCheck.py](https://github.com/Elelion/whats_control/blob/main/modules/WhatsminerCheck.py)
+модуль для проверки, что передаваемый ip, является whatminer'ом
+
+- [WhatsminerCollectData.py](https://github.com/Elelion/whats_control/blob/main/modules/WhatsminerCollectData.py)
+модуль для сбора данных с whatsminer по заданному ip
+
+- [WhatsminerControl.py](https://github.com/Elelion/whats_control/blob/main/modules/WhatsminerControl.py)
+модуль для обработки данных, которые были собраны модулем
+WhatsminerCollectData.py
 
 
 [//]: # (### Запуск:)
